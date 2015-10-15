@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Application description.",
   "scripts": {
-    "start": "NODE_ENV='development' meteor --settings settings-development.json",
+    "test": "NODE_ENV='development' VELOCITY=1 meteor --test --settings settings-development.json",
+    "start": "NODE_ENV='development' VELOCITY=0 meteor --settings settings-development.json",
     "staging": "meteor deploy staging.meteor.com --settings settings-development.json",
     "production": "meteor deploy production.meteor.com --settings settings-production.json"
   }
