@@ -1,24 +1,10 @@
-let slots = [
-  {name: 'Head'},
-  {name: 'Shoulders'},
-  {name: 'Torso'},
-  {name: 'Wrists'},
-  {name: 'Hands'},
-  {name: 'Waist'},
-  {name: 'Legs'},
-  {name: 'Feet'},
-  {name: 'Amulet'},
-  {name: 'First ring'},
-  {name: 'Second ring'},
-  {name: 'Main hand'},
-  {name: 'Off hand'}
-];
+let slotNames = JSON.parse(Assets.getText('slots.json'));
 
 let generateSlots = () => {
-  let slotsExist = _allSlotsExist(slots.length);
+  let slotsExist = _allSlotsExist(slotNames.length);
 
   if (!slotsExist) {
-    _createSlots(slots);
+    _createSlots(slotNames);
   }
 };
 
@@ -27,24 +13,24 @@ let _allSlotsExist = (count) => {
   return slotCount === count;
 };
 
-let _createSlots = (slots) => {
-  for (let i = 0; i < slots.length; i++) {
-    let slot = slots[i],
-      slotExists = _checkIfSlotExists(slot.name);
+let _createSlots = (slotNames) => {
+  for (let i = 0; i < slotNames.length; i++) {
+    let slotName = slotNames[i],
+      slotExists = _checkIfSlotExists(slotName);
 
     if (!slotExists) {
-      _createSlot(slot);
+      _createSlot(slotName);
     }
   }
 };
 
-let _checkIfSlotExists = (name) => {
-  return Slots.findOne({name: name});
+let _checkIfSlotExists = (slotName) => {
+  return Slots.findOne({name: slotName});
 };
 
-let _createSlot = (slot) => {
+let _createSlot = (slotName) => {
   Slots.insert({
-    name: slot.name
+    name: slotName
   });
 };
 
