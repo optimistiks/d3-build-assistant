@@ -2,9 +2,14 @@
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4">
             <form id="build_form" class="form">
-                  {{#each slots}}
-                      <div class="page-header">{{name}}</div>
-                  {{/each}}
+              {{#each slots}}
+                  <div class="page-header">{{name}}</div>
+                  <select class="form-control">
+                    {{#each itemProps}}
+                        <option value="{{_id}}">{{name}}</option>
+                    {{/each}}
+                  </select>
+              {{/each}}
                 <div class="form-group">
                     <input type="submit" class="btn btn-success" value="Save">
                 </div>

@@ -23,9 +23,16 @@ authenticatedRoutes.route( '/dashboard', {
   }
 });
 
-authenticatedRoutes.route( '/build', {
+authenticatedRoutes.route( '/build-edit/:id', {
   name: 'build-form',
   action() {
     BlazeLayout.render( 'default', { yield: 'build-form' } );
+  }
+});
+
+authenticatedRoutes.route( '/build-view/:id', {
+  name: 'build-view',
+  action() {
+    BlazeLayout.render( 'default', { yield: 'build-view' } );
   }
 });

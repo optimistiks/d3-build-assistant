@@ -2,16 +2,24 @@
 
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4">
+            <form class="form-inline" id="create_build_form">
+                <div class="form-group">
+                    <label class="sr-only" for="buildNameInput">Build name</label>
+                    <input type="text" class="form-control" id="buildNameInput" placeholder="Build name">
+                </div>
+                <button type="submit" class="btn btn-default">Create a build</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="list-group">
-                <a href="#" class="list-group-item">
-                    List group item heading
-                </a>
-                <a href="#" class="list-group-item">
-                    List group item heading
-                </a>
-                <a href="#" class="list-group-item">
-                    List group item heading
-                </a>
+              {{#each builds}}
+                  <a href="{{pathFor 'build-view'}}" class="list-group-item">
+                      {{name}}
+                  </a>
+              {{/each}}
             </div>
         </div>
     </div>
