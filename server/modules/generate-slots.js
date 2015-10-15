@@ -1,18 +1,30 @@
 let slots = [
-  {name: 'head'}
+  {name: 'Head'},
+  {name: 'Shoulders'},
+  {name: 'Torso'},
+  {name: 'Wrists'},
+  {name: 'Hands'},
+  {name: 'Waist'},
+  {name: 'Legs'},
+  {name: 'Feet'},
+  {name: 'Amulet'},
+  {name: 'First ring'},
+  {name: 'Second ring'},
+  {name: 'Main hand'},
+  {name: 'Off hand'}
 ];
 
 let generateSlots = () => {
-  let slotsExist = _checkIfSlotsExist(slots.length);
+  let slotsExist = _allSlotsExist(slots.length);
 
   if (!slotsExist) {
     _createSlots(slots);
   }
 };
 
-let _checkIfSlotsExist = (count) => {
-  let slotCount = Meteor.slots.find().count();
-  return slotCount < count;
+let _allSlotsExist = (count) => {
+  let slotCount = Slots.find().count();
+  return slotCount === count;
 };
 
 let _createSlots = (slots) => {
@@ -27,11 +39,11 @@ let _createSlots = (slots) => {
 };
 
 let _checkIfSlotExists = (name) => {
-  return Meteor.slots.findOne({name: name});
+  return Slots.findOne({name: name});
 };
 
 let _createSlot = (slot) => {
-  Slots.createSlot({
+  Slots.insert({
     name: slot.name
   });
 };
