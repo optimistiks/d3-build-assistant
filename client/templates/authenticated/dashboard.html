@@ -17,7 +17,7 @@
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="list-group">
               {{#each builds}}
-                  <a href="{{pathFor 'build-view'}}" class="list-group-item">
+                  <a href="{{pathFor 'build-view' _id=_id}}" class="list-group-item">
                     {{name}}
                   </a>
               {{/each}}
