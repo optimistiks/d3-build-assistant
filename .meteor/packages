@@ -37,3 +37,4 @@ tracker
 sanjo:jasmine
 velocity:html-reporter
 velocity:console-reporter
+manuel:reactivearray

@@ -6,7 +6,7 @@
             <form id="build_form" class="form">
               {{#each slots}}
                   <div class="page-header">{{name}}<button type="button" class="btn btn-xs btn-default pull-right add-build-stat">Add</button></div>
-                {{#each buildStats _id}} <!-- find build stats by slot id -->
+                {{#each buildStatsBySlotId _id}} <!-- find build stats by slot id -->
                     <select class="form-control">
                       {{#each itemProps}}
                           <option value="{{_id}}">{{name}}</option>

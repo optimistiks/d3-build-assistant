@@ -1,13 +1,13 @@
 Builds = new Meteor.Collection('Builds');
 
 Builds.allow({
-  insert: () => true,
+  insert: () => false,
   update: () => false,
   remove: () => false
 });
 
 Builds.deny({
-  insert: () => false,
+  insert: () => true,
   update: () => true,
   remove: () => true
 });

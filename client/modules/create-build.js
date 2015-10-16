@@ -26,11 +26,10 @@ let validation = (template) => {
 
 let _handleCreate = (template) => {
   let build = {
-    userId: Meteor.userId(),
     name: template.find('[name="buildName"]').value
   };
 
-  Builds.insert(build, (error) => {
+  Meteor.call('insertBuild', build, (error) => {
     if (error) {
       Bert.alert(error.reason, 'danger');
     } else {

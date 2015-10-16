@@ -1,11 +1,12 @@
-Template['build-edit'].onCreated(() => {
-  Template.instance().subscribe('buildStats');
-  Template.instance().subscribe('builds');
-  Template.instance().subscribe('slots');
-  Template.instance().subscribe('itemProps');
+Template['build-edit'].onCreated(function () {
+
+  this.subscribe('buildStats');
+  this.subscribe('builds');
+  this.subscribe('slots');
+  this.subscribe('itemProps');
+
 });
 
-var buildStats = new Blaze.Var([]);
 
 Template['build-edit'].events({
   'click .add-build-stat': (event) => {
@@ -14,16 +15,18 @@ Template['build-edit'].events({
 });
 
 Template['build-edit'].helpers({
-  buildStats: function (slotId) {
-    return buildStats.get();
+  buildStatsBySlotId (slotId) {
+    return BuildStats.find({buildId: FlowRouter.current().params._id, slotId: slotId});
   },
-  build: function () {
+  build () {
     return Builds.findOne({_id: FlowRouter.current().params._id});
   },
-  slots: function () {
-    return Slots.find();
+  slots () {
+    console.log('slots helper, return', Template.instance().slots);
+    return Slots.find()
   },
-  itemProps: function () {
+  itemProps () {
+    console.log('item props helper, return', Template.instance().itemProps);
     return ItemProps.find();
   }
 });
