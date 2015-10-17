@@ -16,15 +16,15 @@ authenticatedRoutes.route('/', {
   }
 });
 
-authenticatedRoutes.route('/dashboard', {
-  name: 'dashboard',
+authenticatedRoutes.route('/build-list', {
+  name: 'build-list',
   action() {
-    BlazeLayout.render('default', {yield: 'dashboard'});
+    BlazeLayout.render('default', {yield: 'buildList'});
   }
 });
 
-authenticatedRoutes.route('/buildEdit/:_id', {
-  name: 'buildEdit',
+authenticatedRoutes.route('/build-edit/:_id', {
+  name: 'build-edit',
   action() {
     BlazeLayout.render('default', {yield: 'buildEdit'});
   }
@@ -33,6 +33,6 @@ authenticatedRoutes.route('/buildEdit/:_id', {
 authenticatedRoutes.route('/build-view/:_id', {
   name: 'build-view',
   action() {
-    BlazeLayout.render('default', {yield: 'build-view'});
+    BlazeLayout.render('default', {yield: 'buildView'});
   }
 });

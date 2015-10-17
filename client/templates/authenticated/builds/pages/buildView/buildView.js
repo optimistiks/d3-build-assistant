@@ -1,4 +1,4 @@
-Template['build-view'].helpers({
+Template.buildView.helpers({
   _id () {
     return FlowRouter.current().params._id;
   }
