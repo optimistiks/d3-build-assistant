@@ -1,5 +1,8 @@
 <template name="buildSlotView">
-    <div class="page-header">{{name}}
+    <div class="page-header">{{slot.name}}
         <button type="button" class="btn btn-xs btn-default pull-right add-build-stat">Add</button>
     </div>
+  {{#each buildStats}}
+    {{> buildStatView buildStat=this}}
+  {{/each}}
 </template>
