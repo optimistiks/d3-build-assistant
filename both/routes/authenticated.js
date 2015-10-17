@@ -23,10 +23,10 @@ authenticatedRoutes.route('/dashboard', {
   }
 });
 
-authenticatedRoutes.route('/build-edit/:_id', {
-  name: 'build-edit',
+authenticatedRoutes.route('/buildEdit/:_id', {
+  name: 'buildEdit',
   action() {
-    BlazeLayout.render('default', {yield: 'build-edit'});
+    BlazeLayout.render('default', {yield: 'buildEdit'});
   }
 });
 
