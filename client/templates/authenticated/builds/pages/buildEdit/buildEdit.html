@@ -5,7 +5,7 @@
 
             <form id="build_form" class="form">
               {{#each slots}}
-                {{> buildSlotView slot=this buildStats=buildStatsBySlot}}
+                {{> buildSlotView slot=this build=build buildStatsBySlot=buildStatsBySlot}}
               {{/each}}
                 <div class="form-group">
                     <input type="submit" class="btn btn-success" value="Save">

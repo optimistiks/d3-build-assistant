@@ -1,3 +1,14 @@
 <template name="buildStatView">
-    <p>buildStatView</p>
+    <div class="row form-group">
+        <div class="col-xs-6">
+            <select class="form-control">
+              {{#each itemProps}}
+                  <option value={{_id}}>{{name}}</option>
+              {{/each}}
+            </select>
+        </div>
+        <div class="col-xs-6">
+            <input class="form-control" type="text" placeholder="Priority">
+        </div>
+    </div>
 </template>
