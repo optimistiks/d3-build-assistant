@@ -3,6 +3,7 @@ Template.buildEdit.onCreated(function () {
   this.subscribe('slots');
   this.subscribe('builds');
 
+  this.buildId = FlowRouter.current().params._id;
   this.buildStatsBySlot = new ReactiveDict();
 
 });
@@ -23,7 +24,7 @@ Template.buildEdit.helpers({
   },
 
   build () {
-    return Builds.findOne({_id: FlowRouter.current().params._id});
+    return Builds.findOne({_id: Template.instance().buildId});
   },
 
   slots () {

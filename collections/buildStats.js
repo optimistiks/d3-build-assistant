@@ -29,13 +29,13 @@ let BuildStatsSchema = new SimpleSchema({
     type: String,
     label: "Name of the stat."
   },
-  "statId": {
+  "itemPropId": {
     type: String,
-    label: "Id of the stat."
+    label: "Id of the prop."
   },
-  "statName": {
+  "itemPropName": {
     type: String,
-    label: "Name of the stat."
+    label: "Name of the prop."
   },
   "priority": {
     type: Number,

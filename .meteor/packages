@@ -38,3 +38,4 @@ sanjo:jasmine
 velocity:html-reporter
 velocity:console-reporter
 manuel:reactivearray
+matb33:collection-hooks
