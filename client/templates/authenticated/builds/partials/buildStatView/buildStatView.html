@@ -1,14 +1,14 @@
 <template name="buildStatView">
     <div class="row form-group">
         <div class="col-xs-6">
-            <select class="form-control">
+            <select name="buildStats[{{slot._id}}][{{index}}][prop]" class="form-control" required>
               {{#each itemProps}}
                   <option value={{_id}}>{{name}}</option>
               {{/each}}
             </select>
         </div>
         <div class="col-xs-6">
-            <input class="form-control" type="text" placeholder="Priority">
+            <input name="buildStats[{{slot._id}}][{{index}}][priority]" class="form-control" type="text" placeholder="Priority" required>
         </div>
     </div>
 </template>

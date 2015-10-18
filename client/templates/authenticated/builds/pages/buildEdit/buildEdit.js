@@ -7,6 +7,15 @@ Template.buildEdit.onCreated(function () {
 
 });
 
+Template.buildEdit.onRendered(() => {
+
+  Modules.client.createOrUpdateBuildStats({
+    form: "#build_stats_form",
+    template: Template.instance()
+  });
+
+});
+
 Template.buildEdit.helpers({
 
   buildStatsBySlot () {
@@ -20,6 +29,17 @@ Template.buildEdit.helpers({
   slots () {
     return Slots.find();
   }
+});
+
+Template.buildEdit.events({
+
+  'submit #build_stats_form': (event) => {
+
+    event.preventDefault();
+    console.log('you submit a #build_stats_form form', event);
+
+  }
+
 });
 
 

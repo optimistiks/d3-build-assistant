@@ -3,6 +3,6 @@
         <button type="button" class="btn btn-xs btn-default pull-right add-build-stat">Add</button>
     </div>
   {{#each buildStats}}
-    {{> buildStatView buildStat=this}}
+    {{> buildStatView slot=../slot buildStat=this index=@index}}
   {{/each}}
 </template>

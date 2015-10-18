@@ -6,6 +6,10 @@ Template.buildStatView.onCreated(function () {
 
 Template.buildStatView.helpers({
 
+  slot () {
+    return this.slot;
+  },
+
   itemProps () {
     return ItemProps.find();
   }
